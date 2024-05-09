@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Calculadora de Horário de Ponto</title>
+
+</head>
+<body>
+
+<script src="app.js"></script>
+
+<div class="container">
+    <h2>Calculadora de Horário de Ponto</h2>
+    <label for="primeiroPonto">Horário do primeiro ponto:</label>
+    <input type="time" id="primeiroPonto" required><br><br>
+
+    <label for="segundoPonto">Horário do segundo ponto (saída para almoço):</label>
+    <input type="time" id="segundoPonto" required><br><br>
+
+    <label for="terceiroPonto">Horário do terceiro ponto (retorno do almoço):</label>
+    <input type="time" id="terceiroPonto" required><br><br>
+
+    <button onclick="calcularUltimoPonto()">Calcular</button><br><br>
+
+    <label for="duracaoAlmoco">Total de almoço:</label>
+    <input type="text" id="duracaoAlmoco" readonly><br><br>
+
+    <label for="ultimoPonto">Horário do último ponto (saída):</label>
+    <input type="text" id="ultimoPonto" readonly>
+</div>
+
+
+
+</body>
+</html>
