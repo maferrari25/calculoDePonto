@@ -13,34 +13,48 @@
 
     <script src="app.js"></script>
 
-    <div class="container">
-        <h2>Calculadora de Horário de Ponto</h2>
-
-        <label for="totalExpediente">Informe sua carga horaria trabalhada:</label>
-        <input type="time" id="totalExpediente" required><br><br>
-
-        <label for="primeiroPonto">Horário do primeiro ponto:</label>
-        <input type="time" id="primeiroPonto" required><br><br>
-
-        <label for="segundoPonto">Horário do segundo ponto (saída para almoço):</label>
-        <input type="time" id="segundoPonto" required><br><br>
-
-        <label for="terceiroPonto">Horário do terceiro ponto (retorno do almoço):</label>
-        <input type="time" id="terceiroPonto" required><br><br>
-
-
-        <button onclick="calcularUltimoPonto()">Calcular</button>
-
-        <button onclick="limpar()">Limpar</button><br><br>
-
-        <label for="duracaoAlmoco">Total de almoço:</label>
-        <input type="text" id="duracaoAlmoco" readonly><br><br>
-
-        <label for="ultimoPonto">Horário do último ponto (saída):</label>
-        <input type="text" id="ultimoPonto" readonly>
-
-
+    <div>
+        <div class="container">
+            <h2>Calculadora de Horário de Ponto</h2>
+    
+            <label for="totalExpediente">Informe sua carga horaria trabalhada:</label>
+            <input type="time" id="totalExpediente" required><br><br>
+    
+            <label for="primeiroPonto">Horário de entrada:</label>
+            <input type="time" id="primeiroPonto" required><br><br>
+    
+            <label for="tempoAlmoço">Tempo de almoço:</label>
+            <input type="time" id="tempoAlmoço" required><br><br>
+    
+            <label for="segundoPonto">Saída almoço:</label>
+            <input type="time" id="segundoPonto" required><br><br>
+    
+            <button onclick="calcularRetornoAlmoço()">Calcular retorno almoço</button><br><br>
+    
+    
+            <label for="terceiroPonto">Retorno do almoço:</label>
+            <input type="time" id="terceiroPonto" required><br><br>
+    
+    
+            <button onclick="calcularUltimoPonto()">Calcular saída</button>
+            <button onclick="limpar()">Limpar</button><br><br>
+    
+           
+    
+            <label for="ultimoPonto">Previsão de saída:</label>
+            <input type="text" id="ultimoPonto" readonly><br><br>
+            <label id="sugestaoHorario"></label><br><br>
+            <label id="duracaoAlmoco"></label>
+    
+    
+        </div>
+    
+        <div class="caixa">
+            <p>Creditos à criadora <a href="https://www.linkedin.com/in/adelinaferrarisantos/" target="_blank">Adelina Ferrari</a>.</p>
+        </div>
     </div>
+
+    
 
 
 

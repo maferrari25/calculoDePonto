@@ -20,6 +20,25 @@ function adicionarZeroEsquerda(numero, tamanho) {
     return stringNumero;
 }
 
+
+function calcularRetornoAlmoço() {
+
+    var segundoPonto = document.getElementById("segundoPonto").value;
+    var tempoAlmoço = document.getElementById("tempoAlmoço").value;
+    var minutosSegundoPonto = converterParaMinutos(segundoPonto);
+  
+    var tempoAlmoço = converterParaMinutos(tempoAlmoço);
+
+    var retornoAlmoço = tempoAlmoço + minutosSegundoPonto;
+
+    var retornoAlmoço = formatarHora(retornoAlmoço);
+
+    document.getElementById("terceiroPonto").value = retornoAlmoço;
+}
+
+
+
+
 function calcularUltimoPonto() {
     
     var primeiroPonto = document.getElementById("primeiroPonto").value;
@@ -28,11 +47,14 @@ function calcularUltimoPonto() {
     var duracaoAlmoco = document.getElementById("duracaoAlmoco").value;
     var totalExpediente = document.getElementById("totalExpediente").value;
 
-    
+
     var minutosPrimeiroPonto = converterParaMinutos(primeiroPonto);
     var minutosSegundoPonto = converterParaMinutos(segundoPonto);
     var minutosTerceiroPonto = converterParaMinutos(terceiroPonto);
     var totalExpediente = converterParaMinutos(totalExpediente);
+   
+
+   
     
     
 
@@ -42,23 +64,29 @@ function calcularUltimoPonto() {
 
     var minutosUltimoPonto = minutosTerceiroPonto + tempoRestanteTrabalho;
 
+    var sugestaoMinutosAntes = minutosUltimoPonto - 10;
+
+    var sugestaoMinutosDepois = minutosUltimoPonto + 10;
+
     var totalTrabalhado = tempoTrabalhadoAntesAlmoco + tempoRestanteTrabalho;
 
     var ultimoPontoHora = formatarHora(minutosUltimoPonto);
 
     var duracaoAlmoco = minutosTerceiroPonto - minutosSegundoPonto;
-
+   
     var duracaoAlmoco = formatarHora(duracaoAlmoco);
 
     var totalTrabalhado = formatarHora(totalTrabalhado);
 
-    
+    var sugestaoAntes = formatarHora(sugestaoMinutosAntes); 
 
+    var sugestaoDepois = formatarHora(sugestaoMinutosDepois);
 
-    
-    document.getElementById("duracaoAlmoco").value = duracaoAlmoco;
+    document.getElementById("sugestaoHorario").textContent = `Tolerância: ${sugestaoAntes} - ${sugestaoDepois}`;
+    document.getElementById("duracaoAlmoco").textContent = `Tempo de almoço realizado: ${duracaoAlmoco}`;
     document.getElementById("ultimoPonto").value = ultimoPontoHora;
 }
+
 
 
 
@@ -66,12 +94,15 @@ function limpar() {
     document.getElementById('primeiroPonto').value = '';
     document.getElementById('segundoPonto').value = '';
     document.getElementById('terceiroPonto').value = '';
-    document.getElementById('duracaoAlmoco').value = '';
     document.getElementById('ultimoPonto').value = '';
+    document.getElementById('sugestaoHorario').textContent = '';
+    document.getElementById('duracaoAlmoco').textContent = '';
 }
 
 document.addEventListener("DOMContentLoaded", function() {
 
     document.getElementById('totalExpediente').value = '07:30';
+    document.getElementById('tempoAlmoço').value = '01:00';
+   
 
   });

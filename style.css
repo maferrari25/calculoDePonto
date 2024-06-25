@@ -2,16 +2,25 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    display: grid;
     background-image: url("assets/image.jpg");
 }
 .container {
     border-style: inherit;
     background-color: #fff;
     padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.caixa {
+    margin-top: 30px;
+    padding: 8px;
+    border-style: inherit;
+    background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
